@@ -1,5 +1,11 @@
 <template>
     <form @submit="checkForm">
+        <div class="form-group">
+            <p v-if="errors.length">You have to correct these followinge errors:</p>
+            <ul>
+                <li class="text-danger" v-for="(error, index) in errors" :key="index"> {{error}}</li>
+            </ul>
+        </div>
         <div class="form-group col-4">
             <label for="name">Name</label>
             <input class="form-control" id="name" v-model="name" type="text" name="name"/>
@@ -42,9 +48,24 @@ export default {
      checkForm: function (e) {
       e.preventDefault();
 
+     this.errors = []
       //Add validations for required attributes
-
+      if(!this.name){
+          this.errors.push('Name required');
+      }
+       if(!this.age){
+          this.errors.push('Age required');
+      }
+       if(!this.movie){
+          this.errors.push('Movie required');
+      }
+       if(!this.tickets){
+          this.errors.push('Tickets required');
+      }
       //if there is no error then return the true
+      if(!this.errors.length){
+          return true;
+      }
 
     }
  }

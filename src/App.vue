@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <basic-form />
+        <form-validations />
     </div>
 </template>
 
