@@ -58,7 +58,7 @@
 
 <script>
 export default {
-name : 'CustomValidations2',
+name : 'CustomValidations',
 data(){
     return {
      errors: [],
@@ -80,15 +80,19 @@ data(){
   },
   methods:{
     checkForm: function (e) {
+          e.preventDefault();
       this.errors = [];
 
        //if total is not equal to 100
        //display the error the value should be 100
+       if(this.total !== 100){
+         this.errors.push('Total must be 100')
+       }
       if (!this.errors.length) {
         return true;
       }
 
-      e.preventDefault();
+
     }
 }
 }
