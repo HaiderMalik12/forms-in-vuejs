@@ -1,5 +1,5 @@
 <template>
-    <form @submit="checkForm">
+    <form @submit="checkForm" novalidate="true">
         <div class="form-group">
             <p v-if="errors.length">You have to correct these followinge errors:</p>
             <ul>
@@ -66,6 +66,12 @@ export default {
       }
        if(!this.tickets){
           this.errors.push('Tickets required');
+      }
+      if(!this.email){
+          this.errors.push('Email required')
+      }
+      else if(!this.validEmail(this.email)){
+          this.errors.push('Invalid Email')
       }
       //if there is no error then return the true
       if(!this.errors.length){
