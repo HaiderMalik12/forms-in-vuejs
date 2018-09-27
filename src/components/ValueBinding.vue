@@ -2,15 +2,16 @@
     <div class="form-group">
         <select v-model="selected" class="form-control">
             <!-- use v-for for the options -->
+            <option v-for="(option, index) in options" :key="index" :value="option.value">{{option.text}}</option>
         </select>
         <p>Selected: {{ selected }}</p>
 
         <!-- Add number modifier -->
-        <input type="number" class="form-control">
+        <input v-model.number ="age" type="number" class="form-control">
         <p> Age : {{age}} </p>
 
         <!-- add trim message modifier -->
-        <input type="text" class="form-control"/>
+        <input v-model.trim ="msg" type="text" class="form-control"/>
         <p>Message: {{msg}} </p>
     </div>
 </template>
