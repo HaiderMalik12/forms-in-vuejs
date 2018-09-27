@@ -5,9 +5,11 @@
         </select>
         <p>Selected: {{ selected }}</p>
 
+        <!-- Add number modifier -->
         <input type="number" class="form-control">
         <p> Age : {{age}} </p>
 
+        <!-- add trim message modifier -->
         <input type="text" class="form-control"/>
         <p>Message: {{msg}} </p>
     </div>
