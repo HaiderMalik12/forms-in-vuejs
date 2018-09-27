@@ -6,10 +6,12 @@
 
 <script>
 import BasicForm from './components/BasicForm.vue'
+import FormValidations from './components/FormValidations.vue'
 export default {
     name: 'app',
     components: {
-        BasicForm
+        BasicForm,
+        FormValidations
     }
 };
 </script>
