@@ -11,7 +11,7 @@
             </div>
                     <div class="form-group">
                         <label for="address">Address</label>
-                        <textarea v-model="address" class="form-control" id="address">
+                        <textarea class="form-control" id="address">
             </textarea>
                     </div>
                     <div class="form-group form-check">
@@ -51,26 +51,18 @@
                             <option>Canada</option>
                         </select>
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="inputState">Sessions</label>
                         <select id="inputState" class="form-control" multiple>
                             <option>S1</option>
                             <option>S2</option>
                             <option>S3</option>
                         </select>
-                    </div>
+                    </div> -->
 
                     <button type="submit" class="btn btn-primary">Submit</button>
         </form>
         <hr/>
-        <p>Email {{email}}</p>
-        <p>Passowrd {{password}}</p>
-        <p>Address {{address}}</p>
-        <p>Checked {{checked}}</p>
-        <p>Checked names: {{ conferenceNames }}</p>
-        <p>Gender: {{gender}}</p>
-        <p>Location: {{location}}</p>
-        <p>Sessions: {{sessions}}</p>
     </div>
 </template>
 <script>
