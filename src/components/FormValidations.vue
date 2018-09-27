@@ -11,23 +11,27 @@
             <input class="form-control" id="name" v-model="name" type="text" name="name"/>
         </div>
             <div class="form-group col-4">
-                <label for="age">Age</label>
-                <input class="form-control" id="age" v-model="age" type="number" name="age" min="0"/>
-              </div>
+                <label for="email">Email</label>
+                <input class="form-control" id="email" v-model="email" type="email" name="email"/>
+        </div>
                 <div class="form-group col-4">
-                    <label for="tickets">Tickets </label>
-                    <input class="form-control" id="tickets" v-model="tickets" type="number" name="tickets" min="0"/>
+                    <label for="age">Age</label>
+                    <input class="form-control" id="age" v-model="age" type="number" name="age" min="0"/>
               </div>
                     <div class="form-group col-4">
-                        <label for="movie">Select Movie</label>
-                        <select id="movie" v-model="movie" name="movie" class="form-control">
-                            <option>Star Wars</option>
-                            <option>Vanilla Sky</option>
-                            <option>Atomic Blonde</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-4">
-                        <input class="btn btn-primary" type="submit" value="Submit"/>
+                        <label for="tickets">Tickets </label>
+                        <input class="form-control" id="tickets" v-model="tickets" type="number" name="tickets" min="0"/>
+              </div>
+                        <div class="form-group col-4">
+                            <label for="movie">Select Movie</label>
+                            <select id="movie" v-model="movie" name="movie" class="form-control">
+                                <option>Star Wars</option>
+                                <option>Vanilla Sky</option>
+                                <option>Atomic Blonde</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-4">
+                            <input class="btn btn-primary" type="submit" value="Submit"/>
                 </div>
     </form>
 </template>
@@ -41,7 +45,8 @@ export default {
        name: null,
        age: null,
        movie: null,
-       tickets: null
+       tickets: null,
+       email: null
      }
  },
  methods:{
@@ -67,6 +72,10 @@ export default {
           return true;
       }
 
+    },
+    validEmail: function (email) {
+      var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email);
     }
  }
 }
